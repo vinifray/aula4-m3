@@ -25,4 +25,13 @@ public class PessoaJuridica extends Pessoa{
     public void setNomeFantasia(String nomeFantasia) {
         this.nomeFantasia = nomeFantasia;
     }
+
+    @Override
+    public String toString() {
+        return " 1" +
+                "Nome: " + super.getNome() +
+                "\n Telefone: " + super.getNumeroDeTelefone() +
+                "\n CNPJ: " + CNPJ + '\n' +
+                "NomeFantasia: " + nomeFantasia + '\n' ;
+    }
 }

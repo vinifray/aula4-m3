@@ -33,6 +33,23 @@ public class Sistema {
     }
 
     /**
+     * Constroi o objeto Pessoa Jurídica para salvar a lista de contatos
+     */
+    public static void cadastrarPJ(){
+        System.out.println("Digite nome");
+        String nome = new Scanner(System.in).nextLine();
+        System.out.println("Digite telefone");
+        String telefone = new Scanner(System.in).nextLine();
+        System.out.println("Digite CNPJ");
+        String cnpj = new Scanner(System.in).nextLine();
+        System.out.println("Digite nome fantasia");
+        String nomeFantasia = new Scanner(System.in).nextLine();
+
+        PessoaJuridica pessoaJuridica = new PessoaJuridica(nome, telefone, cnpj, nomeFantasia);
+        contatos.adicionarPessoa(pessoaJuridica);
+    }
+
+    /**
      * Pesquisa contato pelo nome e mostra na tela para o usuario
      */
     public static void pesquisarContato(){
@@ -47,14 +64,19 @@ public class Sistema {
 
     }
 
+    /**
+     * Executa o sistema
+     */
     public static void executarSistema(){
         boolean continuar = true;
         while (continuar){
             menu();
             int resposta = new Scanner(System.in).nextInt();
-            if(resposta == 2){
+            if(resposta == 1){
+                cadastrarPJ();
+            }else if (resposta == 2){
                 cadastrarPF();
-            }else if (resposta == 3){
+            } else if(resposta == 3){
                 pesquisarContato();
             }
         }
